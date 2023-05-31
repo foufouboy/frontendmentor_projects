@@ -37,7 +37,7 @@ const FormValidator = (function() {
     const emailSub = document.querySelector(".sub-mail");
 
     dismissButton.addEventListener("click", () => {
-        window.location.href = "/"; 
+        window.location.href = "https://foufouboy.github.io/frontendmentor_projects/newsletter-component-main/"; 
     });
 
     submitButton.addEventListener("click", (e) => {
