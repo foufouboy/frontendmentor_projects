@@ -1,0 +1,17 @@
+{
+  "name": "newsletter-component-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Newsletter sign-up form with success message coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "live-server": "^1.2.2"
+  }
+}
