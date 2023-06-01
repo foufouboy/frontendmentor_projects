@@ -217,6 +217,10 @@ input:focus {
         padding-top: 0;
     }
 
+    footer {
+        display: none;
+    }
+
     h3 {
         font-size: 2.5rem; 
     }
