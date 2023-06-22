@@ -41,6 +41,14 @@ body {
     height: 100vh;
 }
 
+#root {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+}
+
 .calculator-component {
     background-color: var(--white-color);
     padding: 40px 25px;
@@ -155,6 +163,15 @@ hr {
    height: 1px;
    border: 0;
    margin: 75px 0 70px 0;
+}
+
+footer p {
+    font-size: 1.3rem;    
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
 }
 
 @media screen and (min-width: 700px) {
