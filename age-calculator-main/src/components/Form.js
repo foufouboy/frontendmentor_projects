@@ -20,6 +20,7 @@ class Form extends React.Component {
                         <div className={"input " + (errors.days && "invalid-input")}>
                             <label htmlFor="day">Day</label>
                             <input 
+                            id="day"
                             min="1"
                             max="31"
                             placeholder="DD"
@@ -31,6 +32,7 @@ class Form extends React.Component {
                         <div className={"input " + (errors.months && "invalid-input")}>
                             <label htmlFor="month">Month</label>
                             <input 
+                            id="month"
                             min="1"
                             max="12"
                             placeholder="MM"
@@ -42,6 +44,7 @@ class Form extends React.Component {
                         <div className={"input " + (errors.years && "invalid-input")}>
                             <label htmlFor="year">Year</label>
                             <input 
+                            id="year"
                             type="number" 
                             placeholder="YYYY"
                             value={years}
