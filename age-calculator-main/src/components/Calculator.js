@@ -10,26 +10,62 @@ class Calculator extends React.Component {
                 days: "",
                 months: "",
                 years: "",
+            },
+            results: {
+                days: "--",
+                months: "--",
+                years: "--",
+            },
+            errors: {
+                years: "",
+                months: "",
+                days: "",
+                general: "",
             }
         };
 
         this.setUnit = this.setUnit.bind(this);
         this.setResult = this.setResult.bind(this);
-        this.results = {
-            years: "--",
-            months: "--",
-            days: "--", 
-        };
+        this.setError = this.setError.bind(this);
+        this.resetErrors = this.resetErrors.bind(this);
+    }
+
+    resetErrors() {
+        this.setState(prevState => ({
+            ...prevState,
+            errors: {
+                days: "",
+                months: "",
+                years: "",
+                general: "",
+            },
+        }))
+    }
+
+    setError(message, field) {
+        this.setState(prevState => ({ 
+            ...prevState,
+            errors: {
+                ...prevState.errors,
+                [field]: message,
+            }, 
+        }));
+        console.log(this.state);
     }
 
     setResult() {
         const { date } = this.state;
 
+        this.resetErrors();
+
         if (this.isValid(date)) {
-            console.log(true);
-            this.results = this.calculateAgeFrom(date);
+
+            this.setState(prevState => ({
+                ...prevState,
+                results: this.calculateAgeFrom(date),
+            }));
+
         } 
-        console.log(false);
     }
 
     isValid(date) {
@@ -37,28 +73,71 @@ class Calculator extends React.Component {
         const dateExists = (years, months, days) => {
             return new Date(years, months - 1, days).getDate() === days;
         }
+
         const today = new Date();
         let { years, months, days } = date;
-        const formatedDate = new Date(`${years}/${months}/${days}`);
-        console.log(date);
-        console.log(formatedDate);
+        let isValid = true;
+        const formatedDate = new Date(years, months, days);
 
         years = +years;
         months = +months;
         days = +days;
-        
-        if (!(years && months && days)) return false;
-        if ((months < 1 || 12 < months) ||
-            (days < 1 || 31 < days)) return false;
-        if (!dateExists(years, months, days)) return false;
-        if (formatedDate >= today) return false;
 
-        return true;
+        if (years < 1000) {
+            formatedDate.setUTCFullYear(years);
+        }
+
+        console.log(formatedDate);
+        console.log(date);
+
+
+        if (months < 1 || 12 < months) {
+            this.setError("Month not valid!", "months")
+            isValid = false;
+        }
+
+        if (days < 1 || 31 < days) {
+            this.setError("Day not valid!", "days");
+            isValid = false;
+        }
+
+        if (!dateExists(years, months, days)) {
+            this.setError("Must be a valid date", "general")
+            isValid = false;
+        }
+
+        if (formatedDate >= today) {
+            this.setError("Must be in the past", "general");
+            isValid = false;
+        }
+
+        if (formatedDate == "Invalid Date") {
+            this.setError("Must be a valid date", "general");
+            isValid = false;
+        }
+
+        if (!date.months || !date.days || (date.years === "")) {
+            for (let unit in date) {
+                if (date[unit] === "") {
+                    this.setError("Field required!", unit); 
+                }
+            }
+            isValid = false;
+        }
+
+        return isValid;
     }
 
     calculateAgeFrom(date) {
-        date = new Date(`${date.years}/${date.months}/${date.days}`);
         const today = new Date();
+        const { years, months, days } = date;
+
+        date = new Date(years, months, days);
+
+        if (years < 1000) {
+            date.setUTCFullYear(years);
+        }
+
         const age = {
             years: 0,
             months: 0,
@@ -89,6 +168,7 @@ class Calculator extends React.Component {
             unit !== "years") return;
 
         this.setState(prevState => ({
+            ...prevState, 
             date: {
                 ...prevState.date,
                 [unit]: value, 
@@ -102,8 +182,9 @@ class Calculator extends React.Component {
                 <Form 
                 date={this.state.date}
                 setUnit={this.setUnit}
-                setResult={this.setResult}/>
-                <Results results={this.results}/>
+                setResult={this.setResult}
+                errors={this.state.errors}/>
+                <Results results={this.state.results}/>
             </div>
         );
     }

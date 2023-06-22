@@ -10,12 +10,14 @@ class Form extends React.Component {
 
         const { days, months, years } = this.props.date;
         const { setUnit, setResult } = this.props;
+        const { errors } = this.props;
 
         return (
             <div className="form-component">
                 <form action="#">
+                    {errors.general && <p className="error-message">{errors.general}</p>}
                     <fieldset className="inputs">
-                        <div className="input">
+                        <div className={"input " + (errors.days && "invalid-input")}>
                             <label htmlFor="day">Day</label>
                             <input 
                             min="1"
@@ -23,8 +25,9 @@ class Form extends React.Component {
                             type="number" 
                             value={days}
                             onChange={e => setUnit(e.target.value, "days")}/>
+                            { errors.days && <p className="error-message">{errors.days}</p>}
                         </div>
-                        <div className="input">
+                        <div className={"input " + (errors.months && "invalid-input")}>
                             <label htmlFor="month">Month</label>
                             <input 
                             min="1"
@@ -32,13 +35,15 @@ class Form extends React.Component {
                             type="number" 
                             value={months}
                             onChange={e => setUnit(e.target.value, "months")}/>
+                            { errors.months && <p className="error-message">{errors.months}</p>}
                         </div>
-                        <div className="input">
+                        <div className={"input " + (errors.years && "invalid-input")}>
                             <label htmlFor="year">Year</label>
                             <input 
                             type="number" 
                             value={years}
                             onChange={e => setUnit(e.target.value, "years")}/>
+                            { errors.years && <p className="error-message">{errors.years}</p>}
                         </div>
                     </fieldset>
                     <hr />

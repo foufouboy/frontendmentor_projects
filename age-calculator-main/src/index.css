@@ -107,9 +107,12 @@ form {
 .error-message {
     font-weight: 400;
     font-style: italic;
-    font-size: .8rem;
+    font-size: .6rem;
     color: var(--light-red-color);
-    
+}
+
+fieldset .error-message {
+    margin-top: 5px;
 }
 
 .form-component input:focus {
@@ -178,5 +181,9 @@ hr {
         right: -50px;
         width: 85px;
         height: 85px;
+    }
+
+    .error-message {
+        font-size: .8rem;
     }
 }
