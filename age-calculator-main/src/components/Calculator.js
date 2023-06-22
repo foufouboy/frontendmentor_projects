@@ -1,6 +1,5 @@
 import React from "react";
 import Form from "./Form";
-import Footer from "./Footer";
 import Results from "./Results";
 
 class Calculator extends React.Component {
@@ -179,17 +178,14 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <>
-                <div className="calculator-component">
-                    <Form 
-                    date={this.state.date}
-                    setUnit={this.setUnit}
-                    setResult={this.setResult}
-                    errors={this.state.errors}/>
-                    <Results results={this.state.results}/>
-                </div>
-                <Footer/>
-            </>
+                    <div className="calculator-component">
+                        <Form 
+                        date={this.state.date}
+                        setUnit={this.setUnit}
+                        setResult={this.setResult}
+                        errors={this.state.errors}/>
+                        <Results results={this.state.results}/>
+                    </div>
         );
     }
 }
