@@ -132,7 +132,7 @@ class Calculator extends React.Component {
         const today = new Date();
         const { years, months, days } = date;
 
-        date = new Date(years, months, days);
+        date = new Date(years, months - 1, days);
 
         if (years < 1000) {
             date.setUTCFullYear(years);
