@@ -22,6 +22,7 @@ class Form extends React.Component {
                             <input 
                             min="1"
                             max="31"
+                            placeholder="DD"
                             type="number" 
                             value={days}
                             onChange={e => setUnit(e.target.value, "days")}/>
@@ -32,6 +33,7 @@ class Form extends React.Component {
                             <input 
                             min="1"
                             max="12"
+                            placeholder="MM"
                             type="number" 
                             value={months}
                             onChange={e => setUnit(e.target.value, "months")}/>
@@ -41,6 +43,7 @@ class Form extends React.Component {
                             <label htmlFor="year">Year</label>
                             <input 
                             type="number" 
+                            placeholder="YYYY"
                             value={years}
                             onChange={e => setUnit(e.target.value, "years")}/>
                             { errors.years && <p className="error-message">{errors.years}</p>}
