@@ -11,3 +11,7 @@ const hideMenu = (): void => {
         .classList
         .remove("active");
 }
+
+const showNavBurger = (): void => {
+    //
+}
