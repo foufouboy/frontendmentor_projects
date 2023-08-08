@@ -1,17 +1,21 @@
+const openIcon: any = document.querySelector(".open-burger-icon");
+const closeIcon: any = document.querySelector(".close-icon img");
+const modal: any = document.querySelector(".burger-menu-modal")
+
 const showMenu = (): void => {
-    document
-        .querySelector(".nav-menu")
-        .classList
-        .add("active");
+    modal.classList.add("burger-active");
+    modal.style.opacity = 1;
 }
 
-const hideMenu = (): void => {
-    document
-        .querySelector(".nav-menu")
-        .classList
-        .remove("active");
+const hideMenu = (e): void => {
+    if (e.target != modal && e.target != closeIcon) return; 
+
+    modal.classList.remove("burger-active");
+    modal.style.opacity = 0;
+
+
 }
 
-const showNavBurger = (): void => {
-    //
-}
+openIcon.addEventListener("click", showMenu);
+closeIcon.addEventListener("click", e => hideMenu(e));
+modal.addEventListener("click", e => hideMenu(e));
