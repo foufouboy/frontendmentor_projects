@@ -1,6 +1,5 @@
 /* IMPORTS */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Outfit:wght@500&display=swap');
 
 /* GENERAL */
 
@@ -25,6 +24,15 @@ ul {
     list-style: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+}
+
 /* GENERICS */
 
 .cursor-pointer {
@@ -47,10 +55,13 @@ ul {
 
 body {
     display: flex;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
 }
 
 .root {
+    background: var(--off-white);
     font-size: 16px;
     font-family: "Inter";
     padding: 50px 20px;
@@ -266,6 +277,11 @@ section ul {
     color: var(--dark-grayish-blue);
 }
 
+footer {
+    font-family: "Outfit";
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
 @media screen and (max-width: 960px) {
     article {
         grid-template-areas: 
