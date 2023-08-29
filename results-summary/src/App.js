@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyles } from "./components/styles/Global.js";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme.js";
+import { Root } from "./components/styles/Root.styled.js";
+import ScorePanel from "./components/ScorePanel";
+import SummaryPanel from "./components/SummaryPanel";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+        <Root>
+            <GlobalStyles/>
+            <ScorePanel/>
+            <SummaryPanel/>
+        </Root>
+    </ThemeProvider>
   );
 }
 
