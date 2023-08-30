@@ -4,7 +4,7 @@ import MemoryIcon from "../assets/images/icon-memory.svg";
 import VerbalIcon from "../assets/images/icon-verbal.svg";
 import VisualIcon from "../assets/images/icon-visual.svg";
 
-export default function SummaryPanel() {
+export default function SummaryPanel({ data }) {
     return (
         <SummaryPanelStyled className="summary">
             <p className="summary-title">Summary</p>
@@ -12,22 +12,22 @@ export default function SummaryPanel() {
                 <div className="result-box">
                     <img src={ReactionIcon} alt="reaction-icon" className="icon" />
                     <p className="name">Reaction</p>
-                    <p className="box-result">80 <span>/ 100</span></p>
+                    <p className="box-result">{data[0].score} <span>/ 100</span></p>
                 </div>
                 <div className="result-box">
                     <img src={MemoryIcon} alt="memory-icon" className="icon" />
                     <p className="name">Memory</p>
-                    <p className="box-result">80 <span>/ 100</span></p>
+                    <p className="box-result">{data[1].score} <span>/ 100</span></p>
                 </div>
                 <div className="result-box">
                     <img src={VerbalIcon} alt="verbal-icon" className="icon" />
                     <p className="name">Verbal</p>
-                    <p className="box-result">80 <span>/ 100</span></p>
+                    <p className="box-result">{data[2].score} <span>/ 100</span></p>
                 </div>
                 <div className="result-box">
                     <img src={VisualIcon} alt="visual-icon" className="icon" />
                     <p className="name">Visual</p>
-                    <p className="box-result">80 <span>/ 100</span></p>
+                    <p className="box-result">{data[3].score} <span>/ 100</span></p>
                 </div>
             </div>
             <button className="continue">Continue</button>

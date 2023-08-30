@@ -6,7 +6,7 @@ export const StyledScorePanel = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    padding: 20px 50px;
+    padding: 30px 50px;
     padding-bottom: 40px;
     text-align: center;
     background: ${() => {
@@ -17,14 +17,14 @@ export const StyledScorePanel = styled.div`
             ) 
         `;
     }};
-    background: ${() => {
+/*    background: ${() => {
         return `
             linear-gradient(
     hsla(256, 72%, 46%, .8), 
     hsla(256, 72%, 46%, 1), 
             ) 
         `;
-    }};
+    }}; */
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 
@@ -36,6 +36,7 @@ export const StyledScorePanel = styled.div`
     & > p:nth-child(1) {
         color: rgba(255, 255, 255, .7);
         font-weight: 700;
+        font-size: 20px;
     }
 
     .stats {
@@ -73,8 +74,26 @@ export const StyledScorePanel = styled.div`
     }
 
     .text-evaluation {
-        font-size: 1.5rem; 
+        font-size: 1.8rem; 
         font-weight: 700;
     }
 
+    @media screen and (min-width: 700px) {
+        border-radius: 30px;
+        
+        .score {
+            width: 190px;
+            height: 190px;
+        }
+
+        .score-number {
+            font-size: 4rem;
+        }
+
+        .text-evaluation {
+            margin-bottom: -20px;
+            font-size: 2rem;
+        }
+
+    }
 `;

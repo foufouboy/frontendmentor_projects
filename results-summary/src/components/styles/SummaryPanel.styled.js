@@ -85,5 +85,11 @@ export const SummaryPanelStyled = styled.div`
     button.continue:active {
         opacity: .9;
     }
+
+    @media screen and (min-width: 700px) {
+        border-radius: 30px;
+        justify-content: space-between;
+    }
+    
 `;
 
