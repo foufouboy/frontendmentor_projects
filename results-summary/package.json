@@ -1,4 +1,5 @@
 {
+  "homepage": ".",
   "name": "results-summary-component-main",
   "version": "0.1.0",
   "private": true,
