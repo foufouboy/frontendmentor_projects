@@ -13,12 +13,22 @@ export const GlobalStyles = createGlobalStyle`
         height: 100vh;
     }
 
-    @media screen and (min-width: 700px) {
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
 
-        #root {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        & > p:last-child {
+            margin-top: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            & > a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
     }
+
 `

@@ -16,6 +16,7 @@ function App() {
             <ScorePanel data={data}/>
             <SummaryPanel data={data}/>
         </Root>
+        <p>Made by <a href="https://github.com/foufouboy">foufouboy</a></p>
     </ThemeProvider>
   );
 }
