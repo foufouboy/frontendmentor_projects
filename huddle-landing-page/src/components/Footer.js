@@ -31,6 +31,7 @@ export default function Footer() {
                     <SocialIcons/>
                 </Flex>
                 <p>&copy; 2021 Huddle. All rights reserved</p>
+                <p>Made by <a href="https://github.com/foufouboy">foufouboy</a></p>
             </Container>
         </StyledFooter>
     )
