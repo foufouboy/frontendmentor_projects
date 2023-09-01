@@ -3,7 +3,7 @@
 A React web app of a community landing page 
 that is intended to help me familiarize myself with styled-components.
 
-[Live Demo 👈](https://foufouboy.github.io/frontendmentor_projects/huddle-landing-page/)
+[Live Demo 👈](https://foufouboy.github.io/frontendmentor_projects/huddle-landing-page/build/)
 
 ## Realisation details
 
