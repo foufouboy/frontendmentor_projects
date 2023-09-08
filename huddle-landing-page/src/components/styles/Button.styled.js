@@ -6,14 +6,17 @@ export const Button = styled.button`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-family: inherit;
-    padding: 15px 60px;
+    padding: 13px 60px;
     background-color: ${({ bg }) => bg || "#fff"};
     color: ${({ color }) => color || "#000"};
 
     &:hover {
-        opacity: 0.9;
-        transform: scale(0.98);
+        opacity: 0.5;
+    }
+
+    @media (max-width: ${({theme}) => theme.mobile}) {
+        font-size: 14px;
     }
 `

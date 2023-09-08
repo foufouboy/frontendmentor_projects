@@ -3,18 +3,29 @@ import styled from "styled-components";
 export const StyledFooter = styled.footer`
     background-color: ${({ theme }) => theme.colors.footer};
     color: #fff;
+    font-size: 15px;
     padding: 100px 0 60px;
+    padding-top: 200px;
 
     ul {
         list-style-type: none;
     }
 
-    ul li {
-        margin-bottom: 25px;
+    ul:nth-child(1) {
+        width: 390px;
     }
 
-    p {
-        text-align: center;
+    ul li {
+        margin-bottom: 25px;
+        display: flex;
+        gap: 30px;
+        align-items: start;
+    }
+
+    ul li img {
+        width: 20px;
+        height: auto;
+        margin: 0
     }
 
     & > div > p:last-child {
@@ -28,17 +39,42 @@ export const StyledFooter = styled.footer`
         }
     }
 
+    .footer-flex {
+        align-items: start;
+        justify-content: start;
+        gap: 12%;
+    }
+
+    .footer-flex > ul {
+        flex: initial;
+    }
+
+    .footer-links li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+    img {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
     @media (max-width: ${({ theme }) => theme.mobile}) {
-        text-align: center;
+
+        ul:nth-child(1) {
+            width: auto;
+            margin-bottom: 30px;
+        }
 
         ul {
             padding: 0;
         }
 
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        
+
         p {
             text-align: center;
         }

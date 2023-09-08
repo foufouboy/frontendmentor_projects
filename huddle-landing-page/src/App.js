@@ -6,6 +6,7 @@ import { theme } from "./theme";
 import { GlobalStyles } from "./components/styles/Global";
 import content from "./content";
 import Card from "./components/Card";
+import GetStarted from "./components/GetStarted";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
-      <Container>
+      <Container className="hero">
         {content.map((item, index) => (
           <Card key={index} item={item}></Card>
         ))}
+        <GetStarted/>
       </Container>
       <Footer></Footer>
     </ThemeProvider>

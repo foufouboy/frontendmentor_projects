@@ -9,21 +9,28 @@ export default function Footer() {
             <Container>
                 <img src="./images/logo_white.svg" alt="" />
 
-                <Flex>
+                <Flex className="footer-flex">
                     <ul>
                         <li>
+                            <img src="./images/icon-location.svg" alt="location-icon" />
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua
                         </li>
-                        <li>+1-543-123-4567</li>
-                        <li>example@huddle.com</li>
+                        <li>
+                            <img src="./images/icon-phone.svg" alt="phone-icon" />
+                            +1-543-123-4567
+                        </li>
+                        <li>
+                            <img src="./images/icon-email.svg" alt="email-icon" />
+                            example@huddle.com
+                        </li>
                     </ul>
-                    <ul>
+                    <ul className="footer-links">
                         <li>About Us</li>
                         <li>What We Do</li>
                         <li>FAQ</li>
                     </ul>
-                    <ul>
+                    <ul className="footer-links">
                         <li>Career</li>
                         <li>Blog</li>
                         <li>Contact Us</li>

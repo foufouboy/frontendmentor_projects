@@ -12,7 +12,7 @@ export default function Header() {
                     <Button>Try it Free</Button>
                 </Nav>
 
-                <Flex>
+                <Flex className="header-main">
                     <div>
                         <h1>Build The Community Your Fans Will Love</h1>
 
@@ -20,7 +20,7 @@ export default function Header() {
                             Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.
                         </p>
 
-                        <Button bg="#ff0099" color="#fff">
+                        <Button bg="hsl(322, 100%, 66%)" color="#fff">
                             Get Started For Free
                         </Button>
                     </div>
